@@ -1,0 +1,310 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    color: #39ff14;
+    text-align: center;
+}
+
+:root {
+    --arm-length: 1.7rem;
+    --arm-top: 47%; 
+    --leg-length: 2.2rem;
+    --leg-top: 65%;
+    --head-left: 43%;
+    --head-top: 24.4%;
+}
+
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    
+}
+
+#game-title {
+    font-size: 5rem;
+}
+
+button {
+    font-size: 3rem;
+    background-color: black;
+    border: 2px solid #39ff14;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: #39ff14;
+    color: black;
+    border: 2px solid black;
+}
+
+/* HOME PAGE */
+
+#home.show {
+    display: block;
+    background-image: url('background.jpg');
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#start-category {
+    padding-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+#start-categories {
+    background-color: black;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* MAN & GALLOW */
+#man-wrapper {
+    display: block;
+    position: relative;
+    height: 15rem;
+    border: 1px solid #39ff14;
+    width: 200px;
+    margin: 0 auto;
+    border-right: none;
+    border-width: thick;
+}
+
+/* Animations */
+.man-wrapper:hover #left-arm.show {
+    animation: left-arm-wave 0.5s linear forwards infinite alternate;
+}
+
+@keyframes left-arm-wave {
+    /* 0% {
+        transform: 0;
+    } */
+    
+    100% {
+        transform: rotate(75deg);
+        left: 56.2%;
+        top: calc(var(--arm-top) + 1%)
+    }
+}
+
+.man-wrapper:hover #right-arm.show {
+    animation: right-arm-wave 0.5s linear forwards infinite alternate;
+}
+
+@keyframes right-arm-wave {
+    100% {
+        transform: rotate(-75deg);
+        left: 44%;
+        top: calc(var(--arm-top) + 1%)
+    }
+}
+
+.man-wrapper:hover #left-leg.show {
+    animation: left-leg-swing 0.5s linear forwards infinite alternate;
+}
+
+@keyframes left-leg-swing {
+    100% {
+        transform: rotate(-35deg);
+        left: 55%;
+        top: calc(var(--leg-top) + 1%);
+    }
+}
+
+.man-wrapper:hover #right-leg.show {
+    animation: right-leg-swing 0.5s linear forwards infinite alternate;
+}
+
+@keyframes right-leg-swing {
+    100% {
+        transform: rotate(35deg);
+        top: calc(var(--leg-top) + 1%);
+        left: 45%;
+    }
+}
+
+/* Properties and Position of Each Part */
+
+div.man.show {
+    border: 3px solid #39ff14;
+    position: absolute;
+}
+
+#head.show {
+    width: 2rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    left: var(--head-left);
+    top: var(--head-top);
+}
+
+div.stick.show {
+    width: 0 rem;
+    background-color: #39ff14;
+    border: 1.5px solid #39ff14;
+}
+
+#body.show {
+    width: 0rem;
+    height: 4rem;
+    left: calc(var(--head-left) + 7%);
+    /* left: 50%; */
+    top: 40%;
+}
+
+#beam {
+    top: -6%;
+    left: 11.5%;
+    position: absolute;
+    height: 5rem;
+    width: 0rem;
+    background-color: #39ff14;
+    border: 2.5px solid #39ff14;
+    transform: rotate(45deg);
+}
+
+#left-arm.show {
+    height: var(--arm-length);
+    left: 55.3%;
+    top: var(--arm-top); 
+    transform: rotate(55deg);
+}
+
+#right-arm.show {
+    height: var(--arm-length);
+    top: var(--arm-top);
+    transform: rotate(-55deg);
+    left: 45%;
+}
+
+
+#left-leg.show {
+    height: var(--leg-length);
+    top: var(--leg-top);
+    transform: rotate(-45deg);
+    left: 55.9%;
+}
+
+#right-leg.show {
+    height: var(--leg-length);
+    top: var(--leg-top);
+    transform: rotate(45deg);
+    left: 44%;
+}
+
+#rope.show {
+    height: 3.6rem;
+    left: calc(var(--head-left) + 7%);
+}
+
+
+
+/* LETTERS */
+#letters {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(20, auto);
+    justify-content: center;
+}
+
+div.letter {
+    font-size: 2.1rem;
+    border: 1px solid #39ff14;
+    color: #39ff14;
+    font-weight: bold;
+    background-color: black;
+    width: 3rem;
+    height: 3rem;
+}
+
+/* ALPHABET */
+#alphabet {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(13, auto);
+}
+
+.alphabet-letter {
+    font-size: 1.6rem;
+    border: 2px solid black;
+    background-color: #39ff14;
+    color: black;
+    font-weight: bold;
+    width: 2rem;
+    height: 2rem;
+}
+
+.alphabet-letter:not(.selected):hover  {
+    border: 2px solid #39ff14;
+    background-color: black;
+    color: #39ff14;
+    cursor: pointer;
+}
+
+.alphabet-letter.selected {
+    /* border: 0.5px solid #39ff14; */
+    background-color: black;
+    color: #39ff14;
+    font-weight: lighter;
+    cursor: not-allowed;
+}
+
+/* INFO */
+#info-flex {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid #39ff14; */
+    flex-direction: row;
+}
+
+.info {
+    /* border: 1px solid #39ff14; */
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+#mistakes-label,
+#category-label {
+    font-weight: bold;
+    justify-content: right;
+}
+
+#mistakes-left,
+#category {
+    flex-basis: 10rem;
+    align-items: center;
+}
+
+/* RESULT SCREEN */
+.result-screen {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.result-message {
+    font-size: 2.1rem;
+}
+
+/* Losing Screen */
+#losing-screen.show {
+    display: flex;
+}
+
+/* Winning Screen */
+#winning-screen.show {
+    display: flex;
+}

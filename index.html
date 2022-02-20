@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="hangman.css">
+        <script src="hangman.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="icon.png">
+        <title>Hang Man</title>
+    </head>
+    <body>
+        <!-- TITLE -->
+        <h1 id="game-title">Hang Man</h1>
+        <!-- MAN & GALLOW-->
+        <div id="man-wrapper" class="man-wrapper">
+            <div id="right-leg" class="man stick"></div>
+            <div id="left-leg" class="man stick"></div>
+            <div id="right-arm" class="man stick"></div>
+            <div id="left-arm" class="man stick"></div>
+            <div id="body" class="man stick"></div>
+            <div id="head" class="man"></div>
+            <div id="rope" class="man stick"></div>
+            <div id="beam" class="gallow stick"></div>
+        </div>
+        <!-- WORD -->
+        <div id="letters">
+            <div></div>
+        </div>
+        <!-- ALPHABET -->
+        <div id="alphabet">
+            <div class="alphabet-letter">A</div>
+            <div class="alphabet-letter">B</div>
+            <div class="alphabet-letter">C</div>
+            <div class="alphabet-letter">D</div>
+            <div class="alphabet-letter">E</div>
+            <div class="alphabet-letter">F</div>
+            <div class="alphabet-letter">G</div>
+            <div class="alphabet-letter">H</div>
+            <div class="alphabet-letter">I</div>
+            <div class="alphabet-letter">J</div>
+            <div class="alphabet-letter">K</div>
+            <div class="alphabet-letter">L</div>
+            <div class="alphabet-letter">M</div>
+            <div class="alphabet-letter">N</div>
+            <div class="alphabet-letter">O</div>
+            <div class="alphabet-letter">P</div>
+            <div class="alphabet-letter">Q</div>
+            <div class="alphabet-letter">R</div>
+            <div class="alphabet-letter">S</div>
+            <div class="alphabet-letter">T</div>
+            <div class="alphabet-letter">U</div>
+            <div class="alphabet-letter">V</div>
+            <div class="alphabet-letter">W</div>
+            <div class="alphabet-letter">X</div>
+            <div class="alphabet-letter">Y</div>
+            <div class="alphabet-letter">Z</div>
+        </div>
+        <!-- INFO: MISTAKES, CATEGORY -->
+        <div id="info-flex">
+            <div id="mistakes-label" class="info">Remaining Body Parts: </div>
+            <div id="mistakes-left" class="info"></div>
+            <!-- <div id="category-label" class="info">Category: </div>
+            <div id="category" class="info">Cars</div> -->
+        </div>
+        <!-- BUTTONS -->
+        <div id="game-options">
+            <button id="restart-btn" class="restart-btn">Restart</button>
+        </div>
+        <!-- LOSE SCREEN -->
+        <div id="losing-screen" class="result-screen">
+            <div id="losing-message" class="result-message">The Man Got Hanged X_X</div>
+            <button class="restart-btn">New Game</button>
+            <div id="lose-word-reveal" class="result-message">The word was <a class="google-link" target="_blank" rel="noopener noreferrer"></a></div>
+        </div>
+        <!-- WIN SCREEN -->
+        <div id="winning-screen" class="result-screen">
+            <div id="winning-message" class="result-message">The Man Stays Alive ^.^</div>
+            <button class="restart-btn">New Game</button>
+            <div id="win-word-reveal" class="result-message">The word was <a class="google-link" target="_blank" rel="noopener noreferrer"></a></div>
+        </div>
+    </body>
+</html>
